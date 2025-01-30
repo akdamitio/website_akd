@@ -2,6 +2,23 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Roboto:wght@400&display=swap');
 
+
+body {
+      background: 
+          linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+          url('Header2.jpeg') no-repeat center right/cover;
+          background-attachment: fixed;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+    
+      /* transform: scaleY(0.8); */
+      color: white;
+      text-align: center;
+      text-transform: uppercase;
+    
+  }
+
 @media (orientation: landscape) { /* Only apply in horizontal windows */
     body {
         background: 
@@ -19,23 +36,6 @@
     }
 }
 
-@media (orientation: portrait) { /* Only apply in vertical windows */
-  body {
-      background: 
-          linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-          url('Header2.jpeg') no-repeat center right/cover;
-          background-attachment: fixed;
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 900;
-    
-      /* transform: scaleY(0.8); */
-      color: white;
-      text-align: center;
-      text-transform: uppercase;
-    
-  }
-}
 
 .copyright {
     font-size: 1rem;
