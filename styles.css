@@ -23,23 +23,17 @@ body:before {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+
+  /* transform: scaleY(0.8); */      
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+    
 }
-
-
-    
-      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-                url('Header2.jpeg') no-repeat center right / cover;
-      background-attachment: fixed;  /* This works on desktop but not reliably on mobile */
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 900;
-    
-      /* transform: scaleY(0.8); */      
-      color: white;
-      text-align: center;
-      text-transform: uppercase;
-    
-  }
 
 
 
