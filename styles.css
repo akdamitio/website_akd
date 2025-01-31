@@ -90,10 +90,11 @@
 
 .social-links {
     position: absolute;
-    top: calc(52vh - 70px);
+    top: calc(45vh - 80px);
     display: flex;
     gap: 32px;
     text-decoration: none; /* Optional: to remove any underlines */
+
 
 }
 
@@ -106,7 +107,6 @@ li {
 
 .title {
     font-family: 'Marcellus', serif;
-    padding-top: 20vh;
     font-weight: 100;
     line-height: 1; 
     font-style: normal;
@@ -115,7 +115,6 @@ li {
     letter-spacing: 8px;
 
 }
-
 
 
 
