@@ -21,7 +21,7 @@
     .hero {
         background: 
             linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-            url('Header2.jpeg') no-repeat center right/cover;
+            url('Header2.png') no-repeat center right/cover;
     }
     
     .about{
@@ -116,9 +116,6 @@ li {
 
 }
 
-a {
-    align-items: center;
-}
 
 
 /* Flip-in Animation */
@@ -151,23 +148,31 @@ a {
     display: flex;
     justify-content: center; /* Centers the items horizontally */
     margin:0;
+    padding:0;
+    line-height:1;
     text-align: center;
     gap: calc(25px + 1vw);
     font-size: 1.2rem;
-    line-height:1;
     align-items: center;
+    text-decoration: none; /* Optional: to remove any underlines */
+
 }
 
 
 
-nav a, a {
+.navi nav, .navi a {
+    display: flex;
     color: white;
     text-decoration: none;
     transition: opacity 0.3s;
-
+    align-items: center;
+    text-decoration: none; /* Optional: to remove any underlines */
+    margin:0;
+    padding:0;
+    line-height:1;
 }
 
-nav a:hover {
+a:hover {
     opacity: 0.7;
 }
 
@@ -207,7 +212,7 @@ p {
 
 
 
-nav a, a {
+a {
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     font-size: 1rem;
