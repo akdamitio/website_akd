@@ -183,6 +183,8 @@ li a:hover {
 section {
     
     min-height: 100vh;
+    display: flex;
+
 }
 
 h2 {
@@ -208,6 +210,7 @@ p {
     text-transform: none;
     text-align: left;
     line-height: 1.5;
+    margin-bottom: 2rem; /* Extra space for readability */
 }
 
 
