@@ -210,7 +210,7 @@ p {
     text-transform: none;
     text-align: left;
     line-height: 1.5;
-    margin-bottom: 2rem; /* Extra space for readability */
+    padding-bottom: 5vh; /* Extra space for readability */
 }
 
 
