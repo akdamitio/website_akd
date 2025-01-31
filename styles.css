@@ -21,7 +21,7 @@
     .hero {
         background: 
             linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-            url('Header2.png') no-repeat center right/cover;
+            url('Header2.jpeg') no-repeat center right/cover;
     }
     
     .about{
