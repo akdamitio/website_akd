@@ -21,7 +21,7 @@
     .hero {
         background: 
             linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-            url('Header2.png') no-repeat center right/cover;
+            url('Header2.jpeg') no-repeat center right/cover;
     }
     
     .about{
@@ -101,8 +101,7 @@
 
 li {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
+
 }
 
 
@@ -117,7 +116,9 @@ li {
 
 }
 
-
+a {
+    align-items: center;
+}
 
 
 /* Flip-in Animation */
@@ -149,10 +150,12 @@ li {
 .navi {
     display: flex;
     justify-content: center; /* Centers the items horizontally */
-
+    margin:0;
     text-align: center;
     gap: calc(25px + 1vw);
     font-size: 1.2rem;
+    line-height:1;
+    align-items: center;
 }
 
 
@@ -161,6 +164,7 @@ nav a, a {
     color: white;
     text-decoration: none;
     transition: opacity 0.3s;
+
 }
 
 nav a:hover {
