@@ -216,6 +216,17 @@ p {
     line-height: 1.5;
 }
 
+.past {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 550;
+    margin: 0px 6vw 0px 6vw;
+    font-size: 1.25rem;
+    opacity: 0.3
+    text-transform: none;
+    text-align: left;
+    line-height: 1.5;
+}
+
 
 
 a {
@@ -229,3 +240,4 @@ a {
     opacity: 0;
     transform: rotateX(90deg); /* Start flipped */
 }
+
