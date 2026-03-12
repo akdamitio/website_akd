@@ -226,6 +226,8 @@ p {
     text-transform: none;
     text-align: left;
     line-height: 1.5;
+    margin-bottom: 1em
+
 }
 
 
@@ -241,6 +243,7 @@ a {
     opacity: 0;
     transform: rotateX(90deg); /* Start flipped */
 }
+
 
 
 
