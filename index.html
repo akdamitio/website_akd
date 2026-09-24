@@ -29,6 +29,7 @@
 
         <li class="animate navi">
             <nav><a href="#about">About</a></nav>
+            <nav><a href="#newsletter">Newsletter</a></nav>
             <nav><a href="#shows">Shows</a></nav>
             <a target="_blank" href="mailto:akdamitio@gmail.com" title="Send an email">Get in Touch</a>
         </li>
@@ -39,6 +40,42 @@
         <h2>About</h2>
 	<h3>Singer, Songwriter, Performer, Producer</h3>
         <p class="aboutp"> Anthony Damitio is an up-and-coming singer/songwriter whose music features prominently acoustic guitar and strong vocals. He draws from elements of folk, country, pop, rock, and traditional singer/songwriter to craft powerful songs with a strong focus on lyricism and depth. As a performer, he maintains a wide repertoire of cover music from fan favorites like Tyler Childers, Zach Bryan, Ed Sheeran, and The Beatles. To date, Anthony has released five singles, with many more in production. He is currently working on a five-song EP titled "Alibi".</p>
+    </section>
+
+    <section id="newsletter" class="newsletter flip-in">
+        <h2>Newsletter</h2>
+        <p class="newsletter-intro">Sign up for news, show updates, and special content and offers.</p>
+
+        <div id="mlb2-46330578" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-46330578">
+            <div class="ml-form-align-center">
+                <div class="ml-form-embedWrapper embedForm">
+                    <div class="ml-form-embedBody row-form">
+                        <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2658876/forms/199525821672588654/subscribe" method="post" target="_blank">
+                            <div class="ml-form-embedContent">
+                                <h4>Newsletter</h4>
+                                <p>Signup for news, show updates, and special content and offers!</p>
+                            </div>
+                            <div class="ml-form-horizontalRow">
+                                <div class="ml-input-horizontal">
+                                    <input type="email" name="fields[email]" placeholder="Email" autocomplete="email" required>
+                                </div>
+                                <div class="ml-button-horizontal">
+                                    <button type="submit">Subscribe</button>
+                                </div>
+                            </div>
+                            <input type="hidden" name="ml-submit" value="1">
+                            <input type="hidden" name="anticsrf" value="true">
+                        </form>
+                    </div>
+                    <div class="ml-form-successBody row-success" style="display: none">
+                        <div class="ml-form-successContent">
+                            <h4>Thank you!</h4>
+                            <p>You have successfully joined my subscriber list.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     
     <section id="shows" class="flip-in shows">
@@ -71,6 +108,19 @@
     
 
 
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
+<script>
+        function ml_webform_success_46330578() {
+            const form = document.querySelector('.ml-subscribe-form-46330578 .row-form');
+            const success = document.querySelector('.ml-subscribe-form-46330578 .row-success');
+            if (form && success) {
+                form.style.display = 'none';
+                success.style.display = 'block';
+            }
+        }
+
+        fetch("https://assets.mailerlite.com/jsonp/2658876/forms/199525821672588654/takel");
+</script>
 <script>
         // Wait for full page load
         window.onload = function() {
@@ -126,7 +176,6 @@
 </body>
 
 </html>
-
 
 
 
