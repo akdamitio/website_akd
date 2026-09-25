@@ -40,12 +40,15 @@
     }
 }
 
+html {
+    /* Prevent background zoom when user zooms */
+    zoom: 1;
+}
 
-
-
-
-
-
+body {
+    /* Prevent background image from scaling with zoom */
+    background-size: cover !important;
+}
 
 .copyright {
     font-size: 1rem;
@@ -57,7 +60,7 @@
     position: absolute;
     text-align: center;
     left: 50%;
-    bottom: 0.5vh;
+    bottom: 1.5rem;
 }
 
 .hero {
@@ -414,7 +417,13 @@ h3 {
 
 .shows {
     position: relative;
-    padding-bottom: 5rem;
+    padding-bottom: 8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.shows > *:not(.copyright) {
+    flex-shrink: 0;
 }
 
 .newsletter-intro {
@@ -470,10 +479,12 @@ h3 {
     h2 {
         font-size: 2rem;
     }
+
+    .shows {
+        padding-bottom: 10rem;
+    }
+
+    .copyright {
+        bottom: 1.5rem;
+    }
 }
-
-
-
-
-
-
