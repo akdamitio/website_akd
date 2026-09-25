@@ -40,13 +40,14 @@
     }
 }
 
+/* Prevent background from zooming with browser zoom */
 html {
-    /* Prevent background zoom when user zooms */
-    zoom: 1;
+    background-attachment: fixed;
 }
 
 body {
-    /* Prevent background image from scaling with zoom */
+    /* Ensure background stays fixed and doesn't scale */
+    background-attachment: fixed !important;
     background-size: cover !important;
 }
 
