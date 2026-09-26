@@ -125,7 +125,7 @@
                 <div class="book-form-row">
                     <div class="book-field">
                         <label for="book-date">Event date</label>
-                        <input type="text" id="book-date" name="event_date" placeholder="MM/DD/YYYY" inputmode="numeric" autocomplete="off">
+                        <input type="text" id="book-date" name="event_date" placeholder="MM/DD/YYYY" inputmode="numeric" autocomplete="off" maxlength="10">
                     </div>
                     <div class="book-field">
                         <label for="book-type">Event type</label>
@@ -232,6 +232,22 @@
             };
             toggleScrollHint();
             window.addEventListener('scroll', toggleScrollHint, { passive: true });
+        }
+
+        // Auto-format the date field as MM/DD/YYYY while typing, since the
+        // numeric keypad (inputmode="numeric") has no easy slash key.
+        const dateField = document.getElementById('book-date');
+        if (dateField) {
+            dateField.addEventListener('input', (e) => {
+                const digits = e.target.value.replace(/\D/g, '').slice(0, 8);
+                let formatted = digits;
+                if (digits.length > 4) {
+                    formatted = digits.slice(0, 2) + '/' + digits.slice(2, 4) + '/' + digits.slice(4);
+                } else if (digits.length > 2) {
+                    formatted = digits.slice(0, 2) + '/' + digits.slice(2);
+                }
+                e.target.value = formatted;
+            });
         }
 
 
