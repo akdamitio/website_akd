@@ -4,7 +4,7 @@
 
 
 @media (orientation: portrait) {
-
+    
     body {
         background:
             linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
@@ -40,17 +40,13 @@
     }
 }
 
-/* Prevent background from zooming with browser zoom */
 html {
     /* Prevent background zoom when user zooms */
     zoom: 1;
-    background-attachment: fixed;
 }
 
 body {
     /* Prevent background image from scaling with zoom */
-    /* Ensure background stays fixed and doesn't scale */
-    background-attachment: fixed !important;
     background-size: cover !important;
 }
 
@@ -69,7 +65,7 @@ body {
 
 .hero {
     display: flex;
-
+    
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -171,7 +167,7 @@ li a:hover {
 }
 
 section {
-
+    
     min-height: 100vh;
 
 }
@@ -273,7 +269,7 @@ section {
 }
 
 .aboutp{
-
+   
     padding-bottom: 5vh; /* Extra space for readability */
 }
 
