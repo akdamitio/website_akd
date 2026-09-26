@@ -31,9 +31,11 @@
             <nav><a href="#about">About</a></nav>
             <nav><a href="#newsletter">Newsletter</a></nav>
             <nav><a href="#shows">Shows</a></nav>
-            <a target="_blank" href="mailto:akdamitio@gmail.com" title="Send an email">Book Me</a>
+            <nav><a href="#book">Book Me</a></nav>
         </li>
-        
+
+        <div class="scroll-hint" aria-hidden="true"></div>
+
     </div>
     
     <section id="about" class="flip-in about">
@@ -92,21 +94,72 @@
 			<p class="past">Saturday, 6/13, 4p-7p  |  West Rose Tasting Room  |  Buckeye, AZ</p>
 			<p class="past">Sunday, 6/28, 8a-10a  |  Village Coffee Roastery  |  Scottsdale, AZ</p>
             <p class="past">Friday, 7/24, 6p-8p  |  Xtreme Bean  |  Tempe, AZ</p>
-			<p><b>Saturday, 9/26, 4p-7p  |  West Rose Tasting Room  |  Buckeye, AZ</b></p>
-
-
-
-
-
-
-        <div class="copyright">Copyright © 2026 Anthony Damitio - All Rights Reserved.</div>
-
+			<p>Saturday, 9/26, 4p-7p  |  West Rose Tasting Room  |  Buckeye, AZ</p>
 
     </section>
 
+    <section id="book" class="flip-in book">
+        <h2>Book Me</h2>
+        <p class="book-intro">Booking a show, event, or session? Send over the details and I'll get back to you.</p>
+
+        <div class="book-form-wrapper">
+            <form class="book-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <!-- Replace YOUR_FORM_ID above with your real Formspree form ID
+                     (sign up free at https://formspree.io, create a form, and it
+                     will give you a URL exactly in this shape to paste in). -->
+
+                <!-- Honeypot field to cut down on spam bots; hidden from real visitors -->
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                <div class="book-form-row">
+                    <div class="book-field">
+                        <label for="book-name">Name</label>
+                        <input type="text" id="book-name" name="name" autocomplete="name" required>
+                    </div>
+                    <div class="book-field">
+                        <label for="book-email">Email</label>
+                        <input type="email" id="book-email" name="email" autocomplete="email" required>
+                    </div>
+                </div>
+
+                <div class="book-form-row">
+                    <div class="book-field">
+                        <label for="book-date">Event date</label>
+                        <input type="date" id="book-date" name="event_date">
+                    </div>
+                    <div class="book-field">
+                        <label for="book-type">Event type</label>
+                        <select id="book-type" name="event_type">
+                            <option value="Private event">Private event</option>
+                            <option value="Venue / bar">Venue / bar</option>
+                            <option value="Wedding">Wedding</option>
+                            <option value="Festival">Festival</option>
+                            <option value="Session / studio work">Session / studio work</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="book-field book-field-full">
+                    <label for="book-venue">Venue / location</label>
+                    <input type="text" id="book-venue" name="venue" placeholder="City and venue, if known">
+                </div>
+
+                <div class="book-field book-field-full">
+                    <label for="book-message">Details</label>
+                    <textarea id="book-message" name="message" rows="5" placeholder="Set length, budget, timing, anything else useful" required></textarea>
+                </div>
+
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <!--<p class="book-alt">Prefer email? Reach me directly at <a href="mailto:akdamitio@gmail.com">akdamitio@gmail.com</a>.</p>-->
+
+        <div class="copyright">Copyright © 2026 Anthony Damitio - All Rights Reserved.</div>
+    </section>
 
     
-
 
 <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
 <script>
@@ -169,6 +222,17 @@
                 }, 500); // Delay to ensure scrolling has completed
             });
         });
+
+        // Hide the "scroll down" caret once the user starts scrolling,
+        // and bring it back if they return to the top of the page.
+        const scrollHint = document.querySelector('.scroll-hint');
+        if (scrollHint) {
+            const toggleScrollHint = () => {
+                scrollHint.classList.toggle('hidden', window.scrollY > 50);
+            };
+            toggleScrollHint();
+            window.addEventListener('scroll', toggleScrollHint, { passive: true });
+        }
 
 
 </script>    
