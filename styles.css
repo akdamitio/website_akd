@@ -22,11 +22,28 @@ html::before {
     z-index: -1;
     background:
         linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url('Header1.jpeg') no-repeat -800px center/cover;
-    /* 100dvh accounts for the mobile address bar showing/hiding,
-       so the image doesn't appear zoomed/cropped vs. desktop. */
+        url('Header1.jpeg') no-repeat center center/cover;
+    /* Use a static viewport unit, not 100dvh. dvh recalculates live
+       as the mobile address bar hides/shows while scrolling, which
+       resizes this box and makes the cover image visibly rescale
+       ("zoom") mid-scroll. 100lvh is fixed at the *largest* possible
+       viewport size, so it never shrinks/grows during scroll, and
+       since it's the largest size it always fully covers the screen
+       (no gap when the address bar is showing). Fallback to 100vh
+       for older browsers that don't support lvh. */
+    height: 100vh;
     height: 100lvh;
     width: 100vw;
+}
+
+/* Narrow (mobile) screens: anchor 800px into the image rather than
+   centering, since centering crops too much off both sides on tall/
+   narrow viewports. Wider screens keep the default centered position
+   set above. */
+@media (max-width: 700px) {
+    html::before {
+        background-position: -800px center;
+    }
 }
 
 body {
