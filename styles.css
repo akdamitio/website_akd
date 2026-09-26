@@ -22,7 +22,7 @@ html::before {
     z-index: -1;
     background:
         linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url('Header1.jpeg') no-repeat -800px center/cover;
+        url('Header1.jpeg') no-repeat center center/cover;
     /* 100dvh accounts for the mobile address bar showing/hiding,
        so the image doesn't appear zoomed/cropped vs. desktop. */
     height: 100dvh;
