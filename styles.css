@@ -500,3 +500,145 @@ h3 {
         bottom: 1.5rem;
     }
 }
+
+/* ---- Scroll-down caret hint ---- */
+
+.scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    width: 22px;
+    height: 22px;
+    opacity: 0.7;
+    transform: translateX(-50%);
+    animation: scrollHintBounce 2s ease-in-out infinite;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.scroll-hint::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    transform: rotate(45deg);
+}
+
+.scroll-hint.hidden {
+    opacity: 0;
+}
+
+@keyframes scrollHintBounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+/* ---- Book Me section & form ---- */
+
+.book {
+    box-sizing: border-box;
+    padding: 1rem 6vw 5vh;
+    background: transparent;
+}
+
+.book-intro {
+    text-align: center;
+}
+
+.book-alt {
+    text-align: center;
+    opacity: 0.75;
+}
+
+.book-alt a {
+    color: white;
+}
+
+.book-form-wrapper {
+    width: 100%;
+    max-width: 560px;
+    margin: 2rem auto 0;
+    box-sizing: border-box;
+    padding: 20px;
+    background: #f6f6f6;
+    border-radius: 4px;
+    color: #000;
+    text-align: left;
+    text-transform: none;
+}
+
+.book-form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.book-field {
+    flex: 1;
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-field-full {
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-field label,
+.book-field-full label {
+    margin-bottom: 6px;
+    color: #000;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: none;
+}
+
+.book-field input,
+.book-field select,
+.book-field-full input,
+.book-field-full textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    background: #fff;
+    font: 14px/20px 'Roboto', sans-serif;
+    text-transform: none;
+}
+
+.book-field-full textarea {
+    resize: vertical;
+}
+
+.book-form button[type="submit"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 4px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    font: 700 14px/20px 'Roboto', sans-serif;
+    text-transform: none;
+}
+
+.book-form button[type="submit"]:hover {
+    background: #333;
+}
+
+@media (max-width: 470px) {
+    .book-form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
