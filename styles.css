@@ -3,51 +3,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Roboto:wght@400&display=swap');
 
 
-@media (orientation: portrait) {
-    
-    body {
-        background:
-            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-            url('Header1.jpeg') no-repeat center center/cover;
-        background-attachment: fixed;
-        margin: 0;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 900;
-        color: white;
-        text-align: center;
-        text-transform: uppercase;
-    }
+/*
+   Fixed background image.
+   Mobile browsers (iOS Safari, most Android browsers) do NOT actually
+   support `background-attachment: fixed` - they silently fall back to
+   scrolling it with the page. Desktop DevTools mobile emulation still
+   uses the desktop engine, so it renders fine there even though real
+   phones don't.
 
-    .hero,
-    .about,
-    .shows {
-        background: none;
-    }
-}
-
-@media (orientation: landscape) { /* Only apply in horizontal windows */
-    body {
-        background: 
-            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-            url('Header1.jpeg') no-repeat center center/cover;    
-            background-attachment: fixed;
-        margin: 0;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 900;
-        color: white;
-        text-align: center;
-        text-transform: uppercase;
-    }
-}
-
-html {
-    /* Prevent background zoom when user zooms */
-    zoom: 1;
+   The reliable cross-device fix is to stop using background-attachment
+   entirely and instead render the image on its own position:fixed layer
+   that sits behind everything. This works the same on desktop and mobile.
+*/
+html::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url('Header1.jpeg') no-repeat -800px center/cover;
+    /* 100dvh accounts for the mobile address bar showing/hiding,
+       so the image doesn't appear zoomed/cropped vs. desktop. */
+    height: 100dvh;
+    width: 100vw;
 }
 
 body {
-    /* Prevent background image from scaling with zoom */
-    background-size: cover !important;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    background: none;
+}
+
+.hero,
+.about,
+.shows {
+    background: none;
 }
 
 .copyright {
