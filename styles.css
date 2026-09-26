@@ -523,6 +523,8 @@ h3 {
     height: 100%;
     border-right: 3px solid white;
     border-bottom: 3px solid white;
+    /* Rotation lives here, isolated from the bounce animation below,
+       so the chevron shape stays fixed while only the wrapper moves. */
     transform: rotate(45deg);
 }
 
@@ -545,6 +547,25 @@ h3 {
     box-sizing: border-box;
     padding: 1rem 6vw 5vh;
     background: transparent;
+}
+
+@media (max-width: 700px) {
+    .book {
+        position: relative;
+        padding-bottom: 8rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .book > *:not(.copyright) {
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 470px) {
+    .book {
+        padding-bottom: 10rem;
+    }
 }
 
 .book-intro {
@@ -580,6 +601,7 @@ h3 {
 
 .book-field {
     flex: 1;
+    min-width: 0;
     margin-bottom: 14px;
     display: flex;
     flex-direction: column;
@@ -606,6 +628,7 @@ h3 {
 .book-field-full textarea {
     box-sizing: border-box;
     width: 100%;
+    min-width: 0;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
